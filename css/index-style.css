@@ -3,9 +3,9 @@
 ------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-/* ----------------
-    utilities
----------------- */
+/* -------------------------------
+    utilities - general rules
+------------------------------- */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -14,6 +14,18 @@ body {
 .container {
     display: flex;
     justify-content: center;
+}
+
+/* --------------------------------
+    utilities - animation rules
+-------------------------------- */
+@keyframes zoom-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 /* -------------------
@@ -45,10 +57,46 @@ header {
     background-color: #E02C6D;
 }
 
+.kick-football {
+    position: relative;
+}
+
+.kick-football:hover {
+    transform: skewx(-15deg);
+    transition: transform 1.2s;
+}
+
 .kick-football img {
     width: 550px;
 }
 
+.copa-names {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 480px;
+    padding: 35px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 0 100px 0 100px;
+}
+
+.kick-football:hover .copa-names {
+    display: block;
+    animation: zoom-in 1.2s;
+}
+
+.copa-names h3 {
+    color: lightblue;
+}
+
+.copa-names h3, p {
+    margin-top: 0;
+}
+
+.copa-names p {
+    margin-bottom: 0;
+    color: rgb(200, 200, 200);
+}
 /* -------------------
     Main Styles 
 ------------------- */
@@ -75,8 +123,10 @@ main {
     margin: 12px 0;
     font-size: 24px;
     font-weight: 700;
+    color: lightskyblue;
 }
 
 .player p {
     margin: 0;
+    color: rgb(128, 128, 128);
 }
